@@ -36,3 +36,16 @@ SECOND_ELEMENT_SELECTOR_BACKUP = "li.tab-head-item:nth-child(2)"
 # 自定义刷新按钮选择器（如果网页有特定的刷新按钮）
 REFRESH_BUTTON_SELECTOR = None
 # 例如：REFRESH_BUTTON_SELECTOR = "button[aria-label='刷新']"
+
+# 定时执行配置
+# 是否启用定时执行
+ENABLE_SCHEDULER = False
+
+# 执行间隔时间（分钟）
+SCHEDULE_INTERVAL_MINUTES = 30
+
+# 最大执行次数（0表示无限执行）
+MAX_EXECUTIONS = 0
+
+# 是否在每次执行后显示执行统计
+SHOW_STATS = True

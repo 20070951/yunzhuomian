@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "========================================"
-echo "网页自动化截屏工具"
+echo "网页自动化定时截屏工具"
 echo "========================================"
 echo
 
@@ -23,9 +23,12 @@ if ! python3 -c "import selenium" &> /dev/null; then
 fi
 
 echo
-echo "开始运行自动化截屏..."
-python3 web_screenshot.py
+echo "启动定时执行器..."
+echo "注意：请确保在 config.py 中启用了定时执行功能"
+echo
+python3 scheduler.py
 
 echo
+echo "定时执行器已停止"
 echo "按回车键退出..."
 read 

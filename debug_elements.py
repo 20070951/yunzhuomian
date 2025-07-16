@@ -96,6 +96,25 @@ def debug_elements():
         if len(clickable_elements) > 10:
             print(f"  ... 还有 {len(clickable_elements) - 10} 个元素未显示")
 
+        # 查找所有li元素（可能包含选项卡）
+        print("\n=== 查找所有li元素 ===")
+        li_elements = driver.find_elements(By.TAG_NAME, "li")
+        print(f"找到 {len(li_elements)} 个li元素:")
+
+        for i, element in enumerate(li_elements[:15]):  # 只显示前15个
+            try:
+                text = element.text.strip()[:30]  # 限制文本长度
+                classes = element.get_attribute("class")
+                onclick = element.get_attribute("ng-click")
+                if text:  # 只显示有文本的元素
+                    print(
+                        f"  {i+1}. 文本: '{text}' | 类: {classes} | 点击: {onclick}")
+            except Exception as e:
+                pass
+
+        if len(li_elements) > 15:
+            print(f"  ... 还有 {len(li_elements) - 15} 个li元素未显示")
+
         print("\n=== 调试完成 ===")
         print("请根据上面的信息修改 config.py 中的元素选择器")
         print("按回车键关闭浏览器...")
